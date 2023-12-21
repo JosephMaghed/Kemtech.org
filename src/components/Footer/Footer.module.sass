@@ -1,0 +1,84 @@
+@import "styles/variables"
+
+.footer
+    background-color: $blue_basic
+    color: $white_basic
+    display: flex
+    flex-direction: column
+    // padding: 10px $container_desktop
+    @include ContainerPadding($top: 10px)
+
+.topFooter
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+    border-bottom: 1px solid $gray_500
+    padding-bottom: 20px
+    margin-top: 30px
+    gap: 30px
+    flex-wrap: wrap
+    @media only screen and ( max-width: $breakpoint_tablet )
+        flex-direction: column
+        gap: 40px
+
+    .topLeft
+        @media only screen and ( max-width: $breakpoint_tablet )
+            display: flex
+            justify-content: center
+            width: 100%
+
+    .topRight
+        display: flex
+        flex-direction: row
+        align-items: flex-start
+        flex-wrap: wrap
+        gap: 30px
+        flex: 1
+        // justify-content: space-evenly
+
+        @media only screen and ( max-width: $breakpoint_tablet )
+            flex-direction: column
+            justify-content: flex-start
+            gap: 20px
+
+        .footerColumn
+            flex: 1 1 auto
+            justify-content: flex-start
+
+        .columnTitle
+            margin: 0 1rem 1rem 0
+            font-weight: 600
+            font-size: 1.3rem
+
+        .columnRow
+            margin-top: 1rem
+            font-weight: 300
+            font-size: 0.9rem
+            cursor: pointer
+            align-items: center
+
+            &:not(:first-child)
+                margin-top: 10px
+
+        .social
+            height: 35px
+            margin: 0
+            img
+                height: 25px !important
+
+.email
+    font-weight: 1000
+
+.bottomFooter
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    font-size: 0.7rem
+
+.social
+    @extend .columnRow
+
+    span
+        height: 100%
+        margin-left: 5px
+        vertical-align: middle

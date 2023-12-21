@@ -1,0 +1,25 @@
+@import  'styles/variables'
+
+//Swiper classes 
+.container
+    @include ContainerMargin($top-bottom: 50px)
+.swiper
+    width: 100%
+    height: 100%
+    border-radius: 10px !important
+
+.swiperSlide
+    height: 500px !important
+    text-align: center
+    display: flex
+    justify-content: center
+    align-items: center
+    @media only screen and (max-width: $breakpoint_mobile)
+        height: 300px !important
+
+    img
+        border-radius: 10px
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: 50% 50%

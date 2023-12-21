@@ -1,0 +1,68 @@
+@import  'styles/variables'
+
+.heroSection
+    display: flex
+    flex-direction: row
+    // margin: 50px $container_desktop
+    @include ContainerMargin()
+    margin-top: 20px !important
+    margin-bottom: 60px !important
+    gap: 50px
+    @media only screen and ( max-width: $breakpoint_tablet )
+        justify-content: center
+        flex-direction: column-reverse
+
+    .leftColumn
+        flex: 0 0 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        gap: 10px
+        @media only screen and ( max-width: $breakpoint_tablet )
+            width: 100%
+
+        .heroText
+            text-align: justify
+            color: $gray_600
+            margin-bottom: 30px
+
+        h1
+            margin-bottom: 5px
+            font-weight: bold
+
+        .leftBottom
+            display: flex
+            flex-direction: row
+            justify-content: flex-start
+            gap: 50px
+            @media only screen and ( max-width: $breakpoint_mobile )
+                gap: 0
+                justify-content: space-between
+
+            p
+                text-transform: uppercase
+                font-size: 1rem
+                font-weight: 500
+                color: $gray_500
+                @media only screen and ( max-width: $breakpoint_tablet )
+                    font-size: 0.7rem
+
+            img
+                // filter: grayscale(0)
+                filter: opacity(0.8) grayscale(1)
+
+                @media only screen and ( max-width: $breakpoint_tablet )
+                    display: none
+
+                &:hover
+                    filter: opacity(1) grayscale(0)
+                    transition: 0.5s
+
+    .rightColumn
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        @media only screen and ( max-width: $breakpoint_tablet )
+            display: none

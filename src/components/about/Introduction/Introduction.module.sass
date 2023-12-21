@@ -1,0 +1,49 @@
+@import  'styles/variables'
+
+.introduction
+    @include ContainerMargin($top-bottom: 50px)
+    color: $black_basic
+
+    @media only screen and ( max-width: $breakpoint_mobile  )
+        font-size: 0.8rem
+
+        .logo
+            width: 180px
+
+    .columnsContainer
+        display: flex
+        flex-direction: row
+        gap: 50px
+        flex-wrap: wrap
+        justify-content: space-between
+
+        @media only screen and ( max-width: $breakpoint_tablet  )
+            flex-direction: column
+            gap: 10px
+
+        div
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            flex-direction: column
+            flex: 1 1 40%
+            text-align: justify
+            img
+                height: 50px !important
+
+            @media only screen and ( max-width: $breakpoint_tablet  )
+                margin-top: 10px
+                align-items: flex-start
+                flex-direction: column-reverse
+                // NOTE quick fix to img size
+                img
+                    height: 40px !important
+    .shape
+        position: absolute
+        right: 0
+        top: 25%
+        width: 70px
+        @media only screen and ( max-width: $breakpoint_tablet  )
+            width: 40px
+        @media only screen and ( max-width: $breakpoint_mobile  )
+            display: none
