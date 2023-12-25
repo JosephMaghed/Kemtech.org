@@ -1,0 +1,102 @@
+@import  "styles/variables"
+
+.mainContainer
+    @include ContainerMargin($top-bottom:50px)
+
+    .ScheduleContainersWrapper
+        display: flex
+        flex-direction: column
+        gap: 30px
+
+        h3
+            color: $yellow_basic
+
+//====== Agenda Card Styles
+.container
+    width: 90%
+    height: fit-content
+    display: flex
+    box-shadow: $shadow
+    border-radius: 40px
+    flex-direction: column
+    width: 100%
+    overflow: hidden
+
+.InfoWrapper
+    border-radius: 40px
+    width: 100%
+    z-index: 2
+    width: 100%
+    background: $blue_400
+    box-shadow: $shadow
+    border-radius: 40px
+    font-size: 2rem
+    font-weight: 500
+    color: $white_basic
+    text-align: center
+    padding: 10px 20px
+    transition: all 0.3 ease
+    cursor: pointer
+
+    div
+        display: flex
+        justify-content: center
+        flex-direction: row
+        gap: 20px
+
+    &:hover
+        background: $blue_basic
+
+    @media only screen and ( max-width: $breakpoint_tablet )
+        width: 100%
+        gap: 20px
+        font-size: 1.5rem
+
+.InfoWrapperActive
+    @extend .InfoWrapper
+    background: $blue_basic
+
+.scheduleContainer
+    display: flex
+    // flex-grow: 3
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 40px 0
+    transition: all 0.5s ease
+    transform: translateY(0px)
+    white-space: pre-line
+
+    .scheduleWrapper
+        width: 80%
+        padding: 10px 0
+        font-weight: 600
+        @media only screen and ( max-width: $breakpoint_mobile )
+            width: 90%
+            font-size: 0.9rem
+
+        span
+            margin: 0.5rem 0
+            color: $blue_basic
+
+        .activityDetails
+            margin-left: 1rem
+            color: $black_basic
+            padding-bottom: 0.5rem
+            @media only screen and ( max-width: $breakpoint_mobile )
+                margin-left: 0rem
+
+            em
+                color: $gray_600
+                font-size: 0.9rem
+                @media only screen and ( max-width: $breakpoint_mobile )
+                    width: 90%
+                    font-size: 0.8rem
+
+.scheduleContainerHidden
+    @extend  .scheduleContainer
+    transition: all 0.3s ease
+    transform: translateY(-100px)
+    height: 0
+    filter: opacity(0)
+    padding: 0

@@ -1,0 +1,48 @@
+@import './variables'
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap')
+
+// Tailwind
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@layer components
+  .sectionTitle
+    font-size: 3rem
+    color: $blue_basic
+    font-weight: bold
+    @media only screen and ( max-width: $breakpoint_laptop )
+      font-size: 2rem
+
+  .sectionTitleWhite
+    @extend .sectionTitle
+    color: $white_basic
+
+  .subtitle
+    @apply font-semibold text-3xl text-blue-basic mb-2
+
+  .bg-primary
+    @apply bg-blue-basic
+
+html,
+body
+  padding: 0
+  margin: 0
+  font-family: 'Work Sans', sans-serif
+  // background-color: $white_basic
+  color: $black_basic
+  p
+    line-height: 25px
+
+a
+  color: inherit
+  text-decoration: none
+
+*
+  box-sizing: border-box
+
+li
+  list-style: none
+
+ul
+  padding: 0
